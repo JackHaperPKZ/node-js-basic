@@ -28,6 +28,8 @@ Mongoose คืออะไร
 
 การใช้งาน Mongoose
 
+/polls "ติดตั้ง Mongoose" "เชื่อม MongoDB ด้วย Mongoose" "ออกแบบ Schema และ Model" "นำโมเดลไปใช้งาน"
+
 -ติดตั้ง Mongoose
 npm install mongoose
 mongoose.connect('mongodb://<hostnam:port>/<database>)
