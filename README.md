@@ -7,7 +7,7 @@ Node.js is an open-source and cross-platform JavaScript runtime environment. It 
 https://www.facebook.com/KongRuksiamTutorial/
 https://www.udemy.com/courses/development/
 
-# mongoDB
+# MongoDB
 
 เป็นฐานข้อมูลเชิงเอกสาร (Document Store) สําหรับเก็บข้อมูลขนาด ใหญ่ที่มีความยืดหยุ่นสูง ง่ายต่อการปรับขนาดและทํางานข้าม Platform ได้ การจัดเก็บข้อมูลไม่ได้อยู่ในรูปแบบตาราง แต่จะอยู่ในรูปแบบเอกสาร JSON แล้วเซฟเก็บไว้ในเอกสารรูปแบบไบนารี BSON
 มีองค์ประกอบอยู่ 3 ส่วน
