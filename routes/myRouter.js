@@ -1,39 +1,56 @@
 //จัดการ Routing
 const express = require("express");
 const router = express.Router();
-const path = require("path");
 
 router.get("/", (req, res) => {
-  //ระบุ path เริ่มต้น
-  res.status(200);
-  res.type("text/html");
-  res.sendFile(path.join(__dirname, "../templates/index.html"));
+  /**
+   * Ex-17
+   * const name = "pokz-naja";
+   * const age = 26;
+   * const address = "<h2>นนทบุรี นครปฐม</h2>";
+   * res.render("index.ejs", { name: name, age: age, address: address });
+   * */
+  /**
+   * Ex-18
+   * const products = ["เสื้อ", "พัดลม", "หูฟัง", "คีบอร์ด", "แอร์"];
+   * res.render("index.ejs", { products: products });
+   */
+  const products = [
+    {
+      name: "โน็ตบุ๊ค",
+      price: 500,
+      image: "images/products/product1.png",
+    },
+    {
+      name: "เสื้อ",
+      price: 200,
+      image: "images/products/product2.png",
+    },
+    {
+      name: "หูฟัง",
+      price: 3000,
+      image: "images/products/product3.png",
+    },
+  ];
+  res.render("index.ejs", { products: products });
 });
 
-// router parameter
-router.get("/product/:id", (req, res) => {
-  //ระบุ path เริ่มต้น
-  //   res.status(200);
-  //   res.type("text/html");
-  const productId = req.params.id;
-  try {
-    if (productId === "1" || productId === "2" || productId === "3") {
-      res.sendFile(
-        path.join(__dirname, `../templates/product${productId}.html`)
-      );
-    } else {
-      /** เปลี่ยนเส้นทาง path */
-      res.redirect("/");
-      //   res.status(404);
-      //   res.send(`<h1>404 Pages Not Found</h1>`);
-    }
-  } catch (error) {
-    res.redirect("/");
-    // res.status(404);
-    // res.send(`<h1>404 Pages Not Found</h1>`);
-  }
-  //   const myhtml = `<h1>Product ${productId}</h1>`;
-  //   res.send(myhtml);
+router.get("/addForm", (req, res) => {
+  res.render("form.ejs");
+});
+
+router.get("/manage", (req, res) => {
+  res.render("manage.ejs");
+});
+
+router.get("/insert", (req, res) => {
+  console.log("/insert", req.query);
+  res.render("form.ejs");
+});
+
+router.post("/insert", (req, res) => {
+  console.log("/insert", req.body);
+  res.render("form.ejs");
 });
 
 module.exports = router;
